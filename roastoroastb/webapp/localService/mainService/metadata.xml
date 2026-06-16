@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://M02P.UCC.CLOUD:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZSD_002_26K1EXAMEN_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZSD_002_C_LOTBUYERType" sap:label="Consumption view of lot and buyer" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LotGuid"/>
+                </Key>
+                <Property Name="LotGuid" Type="Edm.Guid" Nullable="false" sap:display-format="UpperCase" sap:label="Guid for lot" sap:heading=""/>
+                <Property Name="ParentId" Type="Edm.Guid" sap:display-format="UpperCase" sap:label="Guid for roast batch" sap:heading=""/>
+                <Property Name="Herkomst" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Herkomst for lot" sap:heading=""/>
+                <Property Name="Land" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Land" sap:quickinfo="Land of lot"/>
+                <Property Name="Oogstjaar" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Oogstjaar" sap:quickinfo="Oogstjaar for lot"/>
+                <Property Name="Grade" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Grade" sap:quickinfo="Grade for lot"/>
+                <Property Name="Voorraad" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Voorraad" sap:quickinfo="Voorraad of lot"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Status" sap:quickinfo="Status of lot"/>
+                <Property Name="LotGuidp" Type="Edm.Guid" sap:display-format="UpperCase" sap:label="Guid for lot" sap:heading=""/>
+                <Property Name="Name" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Name" sap:quickinfo="Name of buyer"/>
+                <Property Name="Location" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Location" sap:quickinfo="Location for buyer"/>
+            </EntityType>
+            <EntityType Name="ZSD_002_C_ROASTBLOTType" sap:label="Consumption view of roast batch and lot" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:display-format="UpperCase" sap:label="Guid for roast batch" sap:heading=""/>
+                <Property Name="Batchnr" Type="Edm.String" MaxLength="32" sap:display-format="UpperCase" sap:label="Batchnumber for roast batch" sap:heading=""/>
+                <Property Name="Roastprofile" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Roastprofile for roast batch" sap:heading=""/>
+                <Property Name="Roastdate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date of roast for roast batch" sap:heading=""/>
+                <Property Name="Inputtotal" Type="Edm.Decimal" Precision="4" Scale="1" sap:label="Input totaal for roast batch" sap:heading=""/>
+                <Property Name="Roaststatus" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Roaststatus for roast batch" sap:heading=""/>
+                <Property Name="Freshness" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Freshness (d)" sap:quickinfo="Freshness for roast batch"/>
+                <Property Name="LotGuid" Type="Edm.Guid" sap:display-format="UpperCase" sap:label="Guid for lot" sap:heading=""/>
+                <Property Name="ParentId" Type="Edm.Guid" sap:display-format="UpperCase" sap:label="Guid for roast batch" sap:heading=""/>
+                <Property Name="Herkomst" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Herkomst for lot" sap:heading=""/>
+                <Property Name="Land" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Land" sap:quickinfo="Land of lot"/>
+                <Property Name="Oogstjaar" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Oogstjaar" sap:quickinfo="Oogstjaar for lot"/>
+                <Property Name="Grade" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Grade" sap:quickinfo="Grade for lot"/>
+                <Property Name="Voorraad" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Voorraad" sap:quickinfo="Voorraad of lot"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Status" sap:quickinfo="Status of lot"/>
+            </EntityType>
+            <EntityType Name="ZSD_002_C_ROASTOROASTBType" sap:label="Consumption view of roast output and roast batch" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="RoastoutputGuid"/>
+                </Key>
+                <Property Name="RoastoutputGuid" Type="Edm.Guid" Nullable="false" sap:display-format="UpperCase" sap:label="Guid for output roast batch" sap:heading=""/>
+                <Property Name="RoastbatchId" Type="Edm.String" MaxLength="32" sap:display-format="UpperCase" sap:label="Batchnumber for roast batch" sap:heading=""/>
+                <Property Name="Inputweight" Type="Edm.Decimal" Precision="4" Scale="1" sap:label="Input weight for output roast batch" sap:heading=""/>
+                <Property Name="Outputweight" Type="Edm.Decimal" Precision="4" Scale="1" sap:label="Outputweight for output roast batch" sap:heading=""/>
+                <Property Name="Weightloss" Type="Edm.Decimal" Precision="5" Scale="3" sap:label="Weightloss for output roast batch" sap:heading=""/>
+                <Property Name="Cost" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Cost for output roast batch" sap:heading="" sap:semantics="currency-code"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Time Stamp Long Form" sap:quickinfo="UTC time stamp in long form (YYYYMMDDhhmmss,mmmuuun)"/>
+                <Property Name="Guid" Type="Edm.Guid" sap:display-format="UpperCase" sap:label="Guid for roast batch" sap:heading=""/>
+                <Property Name="Batchnr" Type="Edm.String" MaxLength="32" sap:display-format="UpperCase" sap:label="Batchnumber for roast batch" sap:heading=""/>
+                <Property Name="Roastprofile" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Roastprofile for roast batch" sap:heading=""/>
+                <Property Name="Roastdate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date of roast for roast batch" sap:heading=""/>
+                <Property Name="Inputtotal" Type="Edm.Decimal" Precision="4" Scale="1" sap:label="Input totaal for roast batch" sap:heading=""/>
+                <Property Name="Roaststatus" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Roaststatus for roast batch" sap:heading=""/>
+                <Property Name="Freshness" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Freshness (d)" sap:quickinfo="Freshness for roast batch"/>
+            </EntityType>
+            <EntityContainer Name="ZSD_002_26K1EXAMEN_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZSD_002_C_LOTBUYER" EntityType="ZSD_002_26K1EXAMEN_SRV.ZSD_002_C_LOTBUYERType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSD_002_C_ROASTBLOT" EntityType="ZSD_002_26K1EXAMEN_SRV.ZSD_002_C_ROASTBLOTType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZSD_002_C_ROASTOROASTB" EntityType="ZSD_002_26K1EXAMEN_SRV.ZSD_002_C_ROASTOROASTBType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="ZSD_002_26K1EXAMEN_SRV.ZSD_002_26K1EXAMEN_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <atom:link rel="self" href="https://M02P.UCC.CLOUD:443/sap/opu/odata/sap/ZSD_002_26K1EXAMEN_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://M02P.UCC.CLOUD:443/sap/opu/odata/sap/ZSD_002_26K1EXAMEN_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
